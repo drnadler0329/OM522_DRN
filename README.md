@@ -1,5 +1,4 @@
 # OM522_DRN
-Repository for the OM522 Project
 The decision owner is the project manager responsible for scheduling activities on a project with limited resources. Each activity has a duration, crew/equipment requirements, and predecessors if applicable. Based on this information, the tool recommends a complete activity schedule so the manager can coordinate work, communicate milestone expectations, and allocate the available resources without scheduling more work than those resources can support.
 
 For construction projects in the bid process, the preconstruction team creates an estimate for cost and duration of the project, which is evaluated by the owner. This tool can be run prior to groundbreaking when the preconstruction team has an idea of all of the activities required for job completion, and it can give a rough schedule for the entire project duration.
