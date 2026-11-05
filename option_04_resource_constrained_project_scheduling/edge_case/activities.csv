@@ -1,0 +1,11 @@
+activity_id,duration,milestone_due,priority_weight,locked_start
+A001,2,,1,
+A002,5,,4,
+A003,4,,2,
+A004,2,,1,
+A005,6,,2,
+A006,7,,4,
+A007,9,35,1,
+A008,9,,1,
+A009,6,,5,
+A010,6,,2,

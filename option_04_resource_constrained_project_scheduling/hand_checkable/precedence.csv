@@ -1,0 +1,4 @@
+activity_id,predecessor_id
+A004,A002
+A005,A002
+A006,A005

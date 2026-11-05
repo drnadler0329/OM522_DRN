@@ -1,0 +1,34 @@
+{
+  "schedule": [
+    {
+      "activity_id": "A001",
+      "start": 0,
+      "completion": 4
+    },
+    {
+      "activity_id": "A002",
+      "start": 0,
+      "completion": 4
+    },
+    {
+      "activity_id": "A003",
+      "start": 4,
+      "completion": 10
+    },
+    {
+      "activity_id": "A004",
+      "start": 4,
+      "completion": 10
+    },
+    {
+      "activity_id": "A005",
+      "start": 10,
+      "completion": 12
+    },
+    {
+      "activity_id": "A006",
+      "start": 12,
+      "completion": 15
+    }
+  ]
+}

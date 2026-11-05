@@ -1,0 +1,13 @@
+{
+  "option_number": 4,
+  "option_name": "resource_constrained_project_scheduling",
+  "profile": "development_medium",
+  "base_seed": 522524,
+  "instance_seed": 572561,
+  "size_parameter": 45,
+  "expected_condition": "feasible",
+  "schema_version": 3,
+  "time_unit": "days",
+  "condition_detail": "acyclic precedence with an opening crew conflict under CPM",
+  "source": "synthetic instructor-generated data"
+}

@@ -1,0 +1,8 @@
+{
+  "makespan": 15,
+  "activities_completed": 6,
+  "weighted_milestone_delay": 0,
+  "late_milestones": 0,
+  "cpm_duration": 10,
+  "cpm_gap": 5
+}

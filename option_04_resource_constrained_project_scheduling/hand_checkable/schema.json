@@ -1,0 +1,85 @@
+{
+  "format": "CSV with a header row",
+  "files": {
+    "activities.csv": {
+      "row_count": 6,
+      "columns": [
+        {
+          "name": "activity_id",
+          "type": "string",
+          "nullable": false
+        },
+        {
+          "name": "duration",
+          "type": "integer",
+          "nullable": false
+        },
+        {
+          "name": "milestone_due",
+          "type": "integer",
+          "nullable": true
+        },
+        {
+          "name": "priority_weight",
+          "type": "integer",
+          "nullable": false
+        },
+        {
+          "name": "locked_start",
+          "type": "integer",
+          "nullable": true
+        }
+      ]
+    },
+    "precedence.csv": {
+      "row_count": 3,
+      "columns": [
+        {
+          "name": "activity_id",
+          "type": "string",
+          "nullable": false
+        },
+        {
+          "name": "predecessor_id",
+          "type": "string",
+          "nullable": false
+        }
+      ]
+    },
+    "resource_capacities.csv": {
+      "row_count": 2,
+      "columns": [
+        {
+          "name": "resource_id",
+          "type": "string",
+          "nullable": false
+        },
+        {
+          "name": "capacity",
+          "type": "integer",
+          "nullable": false
+        }
+      ]
+    },
+    "resource_requirements.csv": {
+      "row_count": 12,
+      "columns": [
+        {
+          "name": "activity_id",
+          "type": "string",
+          "nullable": false
+        },
+        {
+          "name": "resource_id",
+          "type": "string",
+          "nullable": false
+        },
+        {
+          "name": "requirement",
+          "type": "integer",
+          "nullable": false
+        }
+      ]
+    }
+  }
+}
