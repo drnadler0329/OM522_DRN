@@ -1,0 +1,16 @@
+[workspace]
+channels = ["conda-forge"]
+name = "option_04_resource_constrained_project_scheduling"
+platforms = ["win-64"]
+version = "0.1.0"
+
+[tasks]
+
+[dependencies]
+python = ">=3.14.10,<3.15"
+polars = ">=2.1.0,<3"
+marimo = ">=0.25.1,<0.26"
+pyarrow = ">=25.0.0,<26"
+matplotlib = ">=3.11.2,<4"
+seaborn = ">=0.13.2,<0.14"
+networkx = ">=3.7,<4"
