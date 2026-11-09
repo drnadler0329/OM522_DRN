@@ -424,8 +424,12 @@ def scheduling_core():
             write_json(decision_path, decision_from_schedule(result['schedule']))
             checked = check_decision(input_dir, decision_path)
             improvement = result['baseline_metrics']['makespan'] - checked['makespan']
+            priority_sequence = result['sequence']
+            priority_position = {task: index for index, task in enumerate(priority_sequence)}
+            start_order = sorted(result['schedule'], key=lambda task: (result['schedule'][task][0], priority_position[task]))
             fields = ('seed', 'iterations_requested', 'iterations_completed', 'initial_temperature', 'final_temperature', 'accepted_moves', 'accepted_worse_moves', 'schedule_evaluations', 'stop_reason', 'sequence', 'search_seconds')
             summary = dict(status='feasible', method='simulated_annealing_activity_lists', input_dir=str(input_dir), **checked, rule_to_beat=result['baseline_metrics'], improvement_days=improvement, beats_rule_to_beat=improvement > 0.001, **{k: result[k] for k in fields}, search_time_limit_seconds=args.time_limit, optimality_proven=False, independent_check='passed')
+            summary.update(priority_sequence=priority_sequence, start_sequence=start_order, critical_path=result['critical_path'])
             schedule = result['schedule']
             rows = [dict(activity_id=t, duration=tasks[t]['duration'], **result['times'][t], scheduled_start=schedule[t][0], scheduled_finish=schedule[t][1]) for t in sorted(tasks, key=lambda t: (schedule[t][0], t))]
             write_csv(output_dir / 'schedule.csv', rows, ['activity_id', 'duration', 'ES', 'EF', 'LS', 'LF', 'slack', 'critical', 'scheduled_start', 'scheduled_finish'])
@@ -436,6 +440,9 @@ def scheduling_core():
             print('Task     Start   Finish     ES     EF     LS     LF')
             for row in rows:
                 print(f"{row['activity_id']:<8}" + ''.join((f'{row[k]:7g}' for k in ('scheduled_start', 'scheduled_finish', 'ES', 'EF', 'LS', 'LF'))))
+            print('One CPM critical path: ' + ' -> '.join(result['critical_path']))
+            print('Best priority sequence: ' + ' -> '.join(priority_sequence))
+            print('Start sequence (ties may run together): ' + ' -> '.join(start_order))
             print(f"Rule to beat: {result['baseline_metrics']['makespan']:g} days; annealing: {checked['makespan']:g} days; improvement: {improvement:g} days")
             print(f"Checked feasible. {result['iterations_completed']} iterations; {result['accepted_worse_moves']} worse moves accepted; stop: {result['stop_reason']}; search: {result['search_seconds']:.3f}s")
             print(f'Outputs: {output_dir}')
