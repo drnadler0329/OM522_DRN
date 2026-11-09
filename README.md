@@ -64,8 +64,8 @@ Running the tool
 pixi run python critical_path_method.py --case development_medium --output-dir cpm_output/development_medium
 pixi run python simulated_annealing.py --case development_medium --output-dir simulated_annealing_output/development_medium
 
-pixi run python check_decision.py --case development_medium --decision cpm_output/development_medium/decision.json --report cpm_output/development_medium/check_report.json
-pixi run python check_decision.py --case development_medium --decision simulated_annealing_output/development_medium/decision.json --report simulated_annealing_output/development_medium/check_report.json
+pixi run python check_decision.py --case development_medium --decision cpm_output/development_medium/decision.json
+pixi run python check_decision.py --case development_medium --decision simulated_annealing_output/development_medium/decision.json
 ```
 
 The checker must receive the **same input case that generated the decision**.
